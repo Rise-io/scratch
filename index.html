@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Scratch Card</title>
+    <link href="./style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./scratchpad.js"></script>
+</head>
+<body>
+    <div id="container">
+        <div class="ad">
+            <canvas width="300" height="300"></canvas>
+        </div>
+        
+        <div class="ad">
+            <canvas width="300" height="300"></canvas>
+        </div>
+
+        <div class="ad">
+            <canvas width="300" height="300"></canvas>
+        </div>
+
+        <div class="ad">
+            <canvas width="300" height="300"></canvas>
+        </div>
+    </div>
+    
+    <script>
+        let options = {
+            brushSize: 50,
+            lineJoin: 'round',
+            percentRequired: 80
+        };
+
+        let img = 1;
+        let cards = [];
+        const CreateScratch = (canvas) => {
+            canvas.id = options.id = (Math.random() + 1).toString(36).substring(7);;
+            
+            canvas.style.backgroundImage = `url('${img}.png')`;
+            img++;
+
+            let scratch = new ScratchCard(options);
+            scratch.can.addEventListener('success', function (e) {
+                // TODO: Add popup code here
+            }, false);
+
+            cards.push(scratch);
+      };
+
+    // Go through all canvas and init the scratch card
+    const canvas = document.getElementsByTagName("canvas");
+    for (let c of canvas) {
+       CreateScratch(c);
+    }
+    </script>
+</body>
+</html>
