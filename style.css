@@ -19,6 +19,8 @@ body {
     grid-gap: 30px;
 
     width: 100%;
+    margin-left: 25px;
+    margin-top: 40px;
 }
 
 .ad {

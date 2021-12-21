@@ -40,7 +40,7 @@ ScratchCard.prototype.init = function (canvasID) {
   this.img.crossOrigin = "Anonymous";
   this.img.src = './scratchHere.jpeg'
   this.img.onload = () => {
-    this.ctx.drawImage(this.img, 0, 0, this.img.width, this.img.height);
+    this.ctx.drawImage(this.img, 0, 0, this.can.width, this.can.height);
 
     this.imageData = this.ctx.getImageData(0,0,this.img.width,this.img.height);
 
