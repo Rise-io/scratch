@@ -1,31 +1,72 @@
-html {
-    background-color: #4f4f4f;
-    color: #f4f4f4;
+html, body {
+    background-color: #dfdfdf;
+    color: #050505;
     font-family: Alpha-Echo;
     cursor: default;
-    overflow-y: hidden;
-
+    
     width: 100%;
     height: 100%;
+    overflow-x: hidden; 
+    margin: 0;
 }
 
-body {
-    overflow-y: hidden; 
+header {
+    grid-area: header;
+
+    height: 100px;
+    margin: 0;
+    padding: 0;
+
+    background-color: #5a1111;
+    border-bottom: 5px solid rgb(196, 196, 196);
+
+    overflow: hidden;
+}
+
+header img {
+    margin-left: 25px;
+    width: 120px;
+    height: 120px;
 }
 
 #container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 30px;
+    grid-gap: 20px;
+    grid-area: content;
 
     width: 100%;
-    margin-left: 25px;
-    margin-top: 40px;
+    margin-top: 100px;
+}
+
+#container  h1{
+    align-self: center;
+    justify-self: center;
+
+    width: 100%;
 }
 
 .ad {
     align-self: center;
     justify-self: center;
 
+    min-height: 425px;
     width: 100%;
+    margin: 0;
+}
+
+footer {
+    grid-area: footer;
+
+    position:absolute;
+    bottom:0;
+    width: 100%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    
+    font-size: 34px;
+    color: #fff;
+    background-color: #5a1111;
+    border-top: 5px solid rgb(196, 196, 196);
 }

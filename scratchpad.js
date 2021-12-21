@@ -40,10 +40,6 @@ ScratchCard.prototype.init = function (canvasID) {
   this.img.crossOrigin = "Anonymous";
   this.img.src = './scratchHere.jpeg'
   this.img.onload = () => {
-    this.ctx.drawImage(this.img, 0, 0, this.can.width, this.can.height);
-
-    this.imageData = this.ctx.getImageData(0,0,this.img.width,this.img.height);
-
     // Reset the canvas. Image gets hidden
     this.reset();
   }
@@ -170,14 +166,12 @@ ScratchCard.prototype.clearPercentage = function (clearedAmount) {
 ScratchCard.prototype.reset = function () {
   // Reset the canvas. Fill it with paint so the user can scratch again.
   this.ctx.globalCompositeOperation = 'source-over';
+  
+  this.ctx.drawImage(this.img, 0, 0, this.can.width, this.can.height);
+  // Save image data for further calculations
+  this.imageData = this.ctx.getImageData(0, 0, this.can.width, this.can.height);
 
   this.resize();
-
-  //this.ctx.fillStyle = this.color;
-  //this.ctx.fillRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);s
-
-  //const img = document.getElementById("scratchHere");
-  //this.ctx.drawImage(img, 0, 0)
 };
 
 ScratchCard.prototype.resize = function () {
